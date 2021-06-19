@@ -18,10 +18,7 @@
   },
   "license": "MIT",
   "keywords": [
-    "vue",
     "remark",
-    "gridsome",
-    "gridsome-plugin",
     "markdown",
     "wcag",
     "a11y",
@@ -37,7 +34,6 @@
     "rollup": "^2.52.1"
   },
   "files": [
-    "dist",
-    "gridsome"
+    "dist"
   ]
 }

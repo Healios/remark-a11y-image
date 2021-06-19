@@ -1,6 +1,33 @@
 {
-    "name": "test-remark-a11y-image",
+    "name": "gridsome-remark-a11y-image",
+    "version": "1.0.0",
     "description": "Gridsome Remark plugin to embed accessible images in markdown.",
     "main": "index.js",
-    "version": "1.0.0"
+    "author": "Marcus Raevmann Brown",
+    "homepage": "https://github.com/healios/gridsome-remark-wcag-image",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/healios/gridsome-remark-wcag-image.git"
+    },
+    "bugs": {
+      "url": "https://github.com/healios/gridsome-remark-wcag-image/issues"
+    },
+    "license": "MIT",
+    "keywords": [
+      "vue",
+      "remark",
+      "gridsome",
+      "gridsome-plugin",
+      "markdown",
+      "wcag",
+      "a11y",
+      "accessability",
+      "image"
+    ],
+    "dependencies": {
+      "unist-util-visit": "1.4.0"
+    },
+    "files": [
+        "gridsome"
+    ]
 }
