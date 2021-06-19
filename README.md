@@ -1,4 +1,5 @@
 # Remark Accessible Image Plugin
+[![Build](https://github.com/Healios/remark-a11y-image/actions/workflows/node.js.yml/badge.svg)](https://github.com/Healios/remark-a11y-image/actions/workflows/node.js.yml)
 
 This is a plugin for [Remark](https://remark.js.org/), and allows you to embed accessible images in [markdown](https://daringfireball.net/projects/markdown/) files. This plugin can also be used with [Gridsome](https://gridsome.org/).
 
