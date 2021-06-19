@@ -95,28 +95,12 @@ or
 
 This is how the image should appear on the screen:
 
-<style scoped>
-.w-full {
-  width: 100%;
-}
-
-.flex {
-  display: flex;
-}
-
-.justify-center {
-  justify-content: center;
-}
-</style>
-
-<div class="w-full flex justify-center">
-  <img src="https://avatars.githubusercontent.com/u/9387114?s=60&v=4" role="presentation" alt="">
-</div>
+<img src="https://avatars.githubusercontent.com/u/9387114?s=60&v=4" role="presentation" alt="">
 
 ### Generated HTML
 
 ```html
-<div class="w-full flex justify-center"> <!-- whatever css you've provided -->
+<div class="w-full flex justify-start"> <!-- whatever css you've provided -->
   <img src="https://avatars.githubusercontent.com/u/9387114?s=60&v=4" role="presentation" alt="">
 </div>
 ```
