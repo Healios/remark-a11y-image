@@ -26,7 +26,7 @@ module.exports = (options) =>
 				const placement  = groups[4].trim();
 
 				// When an image has not been provided, render an error.
-				if (image.length == 0)
+				if (image == "undefined" || image.length == 0)
 				{
 					node.type = "html";
 					node.value = `<p><span style="color: red; font-weight: bold;">remark-a11y-image Error:</span> You must specify an image.</p>`;
@@ -45,7 +45,7 @@ module.exports = (options) =>
 				if (!decorative && alt.length == 0)
 				{
 					node.type = "html";
-					node.value = `<p><span style="color: red; font-weight: bold;">remark-a11y-image Error:</span> When an image is marked as decorative, you must specify an alternative description.</p>`;
+					node.value = `<p><span style="color: red; font-weight: bold;">remark-a11y-image Error:</span> When an image isn't marked as decorative, you must specify an alternative description.</p>`;
 					return;
 				}
 

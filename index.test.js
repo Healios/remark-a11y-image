@@ -81,7 +81,7 @@ test("alt is applied, when image isn't decorative", () =>
 test("error is rendered, when image is not decorative and alt is empty", () =>
 {
     let inputString = base.replace("to-replace", "\`image http://image.com/test.png decorative false alt placement Left end\`");
-    let expectedResult = base.replace("to-replace", `<p><span style="color: red; font-weight: bold;">remark-a11y-image Error:</span> When an image is marked as decorative, you must specify an alternative description.</p>`);
+    let expectedResult = base.replace("to-replace", `<p><span style="color: red; font-weight: bold;">remark-a11y-image Error:</span> When an image isn't marked as decorative, you must specify an alternative description.</p>`);
 
     const result = processorWithCss.processSync(inputString).toString();
     expect(result).toBe(expectedResult);
