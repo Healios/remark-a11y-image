@@ -5,11 +5,13 @@ const remark = require("remark");
 const plugin = require("./index");
 
 // Setup shared data.
-const processor = remark().use(plugin, {
+const processorWithCss = remark().use(plugin, {
     cssClassToCenterImage: "w-full flex justify-center",
     cssClassToLeftAlignImage: "w-full flex justify-start",
     cssClassToRightAlignImage: "w-full flex justify-end",
 });
+
+const processorWithoutCss = remark().use(plugin);
 
 const base = [
     "to-replace",
@@ -27,7 +29,7 @@ test("error is rendered, when markdown is incorrectly formatted", () =>
     let inputString = base.replace("to-replace", "\`image http://image.com/test.png decorative false placement Left end\`");
     let expectedResult = base.replace("to-replace", `<p><span style="color: red; font-weight: bold;">remark-a11y-image Error:</span> The markdown is not correctly formatted.</p>`);
 
-    const result = processor.processSync(inputString).toString();
+    const result = processorWithCss.processSync(inputString).toString();
     expect(result).toBe(expectedResult);
 });
 
@@ -36,7 +38,25 @@ test("error is rendered, when image isn't specified", () =>
     let inputString = base.replace("to-replace", "\`image  decorative false alt This is the alt placement Left end\`");
     let expectedResult = base.replace("to-replace", `<p><span style="color: red; font-weight: bold;">remark-a11y-image Error:</span> You must specify an image.</p>`);
 
-    const result = processor.processSync(inputString).toString();
+    const result = processorWithCss.processSync(inputString).toString();
+    expect(result).toBe(expectedResult);
+});
+
+test("css classes are applied, when the css options have been provided", () =>
+{
+    let inputString = base.replace("to-replace", "\`image http://image.com/test.png decorative false alt This is the alt placement Left end\`");
+    let expectedResult = base.replace("to-replace", `<div class="w-full flex justify-start"><img src="http://image.com/test.png" role="image" alt="This is the alt"></div>`);
+
+    const result = processorWithCss.processSync(inputString).toString();
+    expect(result).toBe(expectedResult);
+});
+
+test("css classes aren't applied, when the css options haven't been provided", () =>
+{
+    let inputString = base.replace("to-replace", "\`image http://image.com/test.png decorative false alt This is the alt placement Left end\`");
+    let expectedResult = base.replace("to-replace", `<div class=""><img src="http://image.com/test.png" role="image" alt="This is the alt"></div>`);
+
+    const result = processorWithoutCss.processSync(inputString).toString();
     expect(result).toBe(expectedResult);
 });
 
@@ -45,7 +65,7 @@ test("alt is empty, when image is decorative", () =>
     let inputString = base.replace("to-replace", "\`image http://image.com/test.png decorative true alt This is the alt placement Left end\`");
     let expectedResult = base.replace("to-replace", `<div class="w-full flex justify-start"><img src="http://image.com/test.png" role="presentation" alt=""></div>`);
 
-    const result = processor.processSync(inputString).toString();
+    const result = processorWithCss.processSync(inputString).toString();
     expect(result).toBe(expectedResult);
 });
 
@@ -54,7 +74,7 @@ test("alt is applied, when image isn't decorative", () =>
     let inputString = base.replace("to-replace", "\`image http://image.com/test.png decorative false alt This is the alt placement Left end\`");
     let expectedResult = base.replace("to-replace", `<div class="w-full flex justify-start"><img src="http://image.com/test.png" role="image" alt="This is the alt"></div>`);
 
-    const result = processor.processSync(inputString).toString();
+    const result = processorWithCss.processSync(inputString).toString();
     expect(result).toBe(expectedResult);
 });
 
@@ -63,7 +83,7 @@ test("error is rendered, when image is not decorative and alt is empty", () =>
     let inputString = base.replace("to-replace", "\`image http://image.com/test.png decorative false alt placement Left end\`");
     let expectedResult = base.replace("to-replace", `<p><span style="color: red; font-weight: bold;">remark-a11y-image Error:</span> When an image is marked as decorative, you must specify an alternative description.</p>`);
 
-    const result = processor.processSync(inputString).toString();
+    const result = processorWithCss.processSync(inputString).toString();
     expect(result).toBe(expectedResult);
 });
 
@@ -72,7 +92,7 @@ test("image is centered", () =>
     let inputString = base.replace("to-replace", "\`image http://image.com/test.png decorative false alt This is the alt placement Center end\`");
     let expectedResult = base.replace("to-replace", `<div class="w-full flex justify-center"><img src="http://image.com/test.png" role="image" alt="This is the alt"></div>`);
 
-    const result = processor.processSync(inputString).toString();
+    const result = processorWithCss.processSync(inputString).toString();
     expect(result).toBe(expectedResult);
 });
 
@@ -81,7 +101,7 @@ test("image is left aligned", () =>
     let inputString = base.replace("to-replace", "\`image http://image.com/test.png decorative false alt This is the alt placement Left end\`");
     let expectedResult = base.replace("to-replace", `<div class="w-full flex justify-start"><img src="http://image.com/test.png" role="image" alt="This is the alt"></div>`);
 
-    const result = processor.processSync(inputString).toString();
+    const result = processorWithCss.processSync(inputString).toString();
     expect(result).toBe(expectedResult);
 });
 
@@ -90,6 +110,6 @@ test("image is right aligned", () =>
     let inputString = base.replace("to-replace", "\`image http://image.com/test.png decorative false alt This is the alt placement Right end\`");
     let expectedResult = base.replace("to-replace", `<div class="w-full flex justify-end"><img src="http://image.com/test.png" role="image" alt="This is the alt"></div>`);
 
-    const result = processor.processSync(inputString).toString();
+    const result = processorWithCss.processSync(inputString).toString();
     expect(result).toBe(expectedResult);
 });

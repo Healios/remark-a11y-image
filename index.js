@@ -50,9 +50,13 @@ module.exports = (options) =>
 				}
 
 				// Figure out how to align the image.
-				let css = options.cssClassToCenterImage;
-				if (placement == "Left") css = options.cssClassToLeftAlignImage;
-				if (placement == "Right") css = options.cssClassToRightAlignImage;
+				let css = "";
+				if (options != undefined)
+				{
+					css = options.cssClassToCenterImage;
+					if (placement == "Left") css = options.cssClassToLeftAlignImage;
+					if (placement == "Right") css = options.cssClassToRightAlignImage;
+				}
 
 				// Update the node.
 				node.type = "html";
