@@ -1,0 +1,5 @@
+{
+    "name": "gridsome-remark-a11y-image",
+    "description": "Gridsome Remark plugin to embed accessible images in markdown.",
+    "main": "index.js"
+}
