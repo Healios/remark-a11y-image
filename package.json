@@ -8,13 +8,13 @@
     "test": "jest"
   },
   "author": "Marcus Raevmann Brown",
-  "homepage": "https://github.com/healios/gridsome-remark-wcag-image",
+  "homepage": "https://github.com/Healios/remark-a11y-image",
   "repository": {
     "type": "git",
-    "url": "https://github.com/healios/gridsome-remark-wcag-image.git"
+    "url": "https://github.com/Healios/remark-a11y-image.git"
   },
   "bugs": {
-    "url": "https://github.com/healios/gridsome-remark-wcag-image/issues"
+    "url": "https://github.com/Healios/remark-a11y-image/issues"
   },
   "license": "MIT",
   "keywords": [
