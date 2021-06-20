@@ -1,6 +1,6 @@
 {
     "name": "gridsome-remark-a11y-image",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Gridsome Remark plugin to embed accessible images in markdown.",
     "main": "index.js",
     "author": "Marcus Raevmann Brown",
