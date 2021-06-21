@@ -6,8 +6,8 @@ This is a plugin for [Remark](https://remark.js.org/), and allows you to embed a
 ## Installation
 
 ```bash
-npm i remark-a11y-image --save-dev
-# yarn add remark-a11y-image --dev
+npm i gridsome-remark-a11y-image --save-dev
+# yarn add gridsome-remark-a11y-image --dev
 ```
 
 ## Configuration

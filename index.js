@@ -34,7 +34,7 @@ module.exports = (options) =>
 				}
 
 				// When it's a decorative image, assign presentation role and clear alt.
-				let role = "image";
+				let role = "img";
 				if (decorative)
 				{
 					role = "presentation";

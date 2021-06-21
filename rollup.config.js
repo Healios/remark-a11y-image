@@ -11,7 +11,12 @@ export default [
         plugins: [
             copy({
                 targets: [
-                    { src: "README.md", dest: "gridsome/" },
+                    {
+                        src: "README.md",
+                        dest: "gridsome/",
+                        transform: (contents) => contents.toString().replace("i remark-a11y-image", "i gridsome-remark-a11y-image")
+                                                                    .replace("add remark-a11y-image", "add gridsome-remark-a11y-image"),
+                    },
                 ],
             }),
         ],

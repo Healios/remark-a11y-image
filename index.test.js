@@ -45,7 +45,7 @@ test("error is rendered, when image isn't specified", () =>
 test("css classes are applied, when the css options have been provided", () =>
 {
     let inputString = base.replace("to-replace", "\`image http://image.com/test.png decorative false alt This is the alt placement Left end\`");
-    let expectedResult = base.replace("to-replace", `<div class="w-full flex justify-start"><img src="http://image.com/test.png" role="image" alt="This is the alt"></div>`);
+    let expectedResult = base.replace("to-replace", `<div class="w-full flex justify-start"><img src="http://image.com/test.png" role="img" alt="This is the alt"></div>`);
 
     const result = processorWithCss.processSync(inputString).toString();
     expect(result).toBe(expectedResult);
@@ -54,7 +54,7 @@ test("css classes are applied, when the css options have been provided", () =>
 test("css classes aren't applied, when the css options haven't been provided", () =>
 {
     let inputString = base.replace("to-replace", "\`image http://image.com/test.png decorative false alt This is the alt placement Left end\`");
-    let expectedResult = base.replace("to-replace", `<div class=""><img src="http://image.com/test.png" role="image" alt="This is the alt"></div>`);
+    let expectedResult = base.replace("to-replace", `<div class=""><img src="http://image.com/test.png" role="img" alt="This is the alt"></div>`);
 
     const result = processorWithoutCss.processSync(inputString).toString();
     expect(result).toBe(expectedResult);
@@ -72,7 +72,7 @@ test("alt is empty, when image is decorative", () =>
 test("alt is applied, when image isn't decorative", () =>
 {
     let inputString = base.replace("to-replace", "\`image http://image.com/test.png decorative false alt This is the alt placement Left end\`");
-    let expectedResult = base.replace("to-replace", `<div class="w-full flex justify-start"><img src="http://image.com/test.png" role="image" alt="This is the alt"></div>`);
+    let expectedResult = base.replace("to-replace", `<div class="w-full flex justify-start"><img src="http://image.com/test.png" role="img" alt="This is the alt"></div>`);
 
     const result = processorWithCss.processSync(inputString).toString();
     expect(result).toBe(expectedResult);
@@ -90,7 +90,7 @@ test("error is rendered, when image is not decorative and alt is empty", () =>
 test("image is centered", () =>
 {
     let inputString = base.replace("to-replace", "\`image http://image.com/test.png decorative false alt This is the alt placement Center end\`");
-    let expectedResult = base.replace("to-replace", `<div class="w-full flex justify-center"><img src="http://image.com/test.png" role="image" alt="This is the alt"></div>`);
+    let expectedResult = base.replace("to-replace", `<div class="w-full flex justify-center"><img src="http://image.com/test.png" role="img" alt="This is the alt"></div>`);
 
     const result = processorWithCss.processSync(inputString).toString();
     expect(result).toBe(expectedResult);
@@ -99,7 +99,7 @@ test("image is centered", () =>
 test("image is left aligned", () =>
 {
     let inputString = base.replace("to-replace", "\`image http://image.com/test.png decorative false alt This is the alt placement Left end\`");
-    let expectedResult = base.replace("to-replace", `<div class="w-full flex justify-start"><img src="http://image.com/test.png" role="image" alt="This is the alt"></div>`);
+    let expectedResult = base.replace("to-replace", `<div class="w-full flex justify-start"><img src="http://image.com/test.png" role="img" alt="This is the alt"></div>`);
 
     const result = processorWithCss.processSync(inputString).toString();
     expect(result).toBe(expectedResult);
@@ -108,7 +108,7 @@ test("image is left aligned", () =>
 test("image is right aligned", () =>
 {
     let inputString = base.replace("to-replace", "\`image http://image.com/test.png decorative false alt This is the alt placement Right end\`");
-    let expectedResult = base.replace("to-replace", `<div class="w-full flex justify-end"><img src="http://image.com/test.png" role="image" alt="This is the alt"></div>`);
+    let expectedResult = base.replace("to-replace", `<div class="w-full flex justify-end"><img src="http://image.com/test.png" role="img" alt="This is the alt"></div>`);
 
     const result = processorWithCss.processSync(inputString).toString();
     expect(result).toBe(expectedResult);
