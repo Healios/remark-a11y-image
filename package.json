@@ -1,6 +1,6 @@
 {
   "name": "remark-a11y-image",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Remark plugin to embed accessible images in markdown.",
   "main": "dist/index.js",
   "scripts": {

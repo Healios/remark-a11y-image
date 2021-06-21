@@ -52,7 +52,7 @@ module.exports = {
         remark: {
           plugins: [
             [
-              "gridsome-remark-wcag-image",
+              "gridsome-remark-a11y-image",
               {
                   cssClassToCenterImage: "w-full flex justify-center",
                   cssClassToLeftAlignImage: "w-full flex justify-start",
