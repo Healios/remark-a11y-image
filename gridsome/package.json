@@ -1,33 +1,33 @@
 {
-    "name": "gridsome-remark-a11y-image",
-    "version": "1.0.2",
-    "description": "Gridsome Remark plugin to embed accessible images in markdown.",
-    "main": "index.js",
-    "author": "Marcus Raevmann Brown",
-    "homepage": "https://github.com/Healios/remark-a11y-image",
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/Healios/remark-a11y-image.git"
-    },
-    "bugs": {
-      "url": "https://github.com/Healios/remark-a11y-image/issues"
-    },
-    "license": "MIT",
-    "keywords": [
-      "vue",
-      "remark",
-      "gridsome",
-      "gridsome-plugin",
-      "markdown",
-      "wcag",
-      "a11y",
-      "accessability",
-      "image"
-    ],
-    "dependencies": {
-      "unist-util-visit": "1.4.0"
-    },
-    "files": [
-        "gridsome"
-    ]
+  "name": "gridsome-remark-a11y-image",
+  "version": "1.0.3",
+  "description": "Gridsome Remark plugin to embed accessible images in markdown.",
+  "main": "index.js",
+  "author": "Marcus Raevmann Brown",
+  "homepage": "https://github.com/Healios/remark-a11y-image",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Healios/remark-a11y-image.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Healios/remark-a11y-image/issues"
+  },
+  "license": "MIT",
+  "keywords": [
+    "vue",
+    "remark",
+    "gridsome",
+    "gridsome-plugin",
+    "markdown",
+    "wcag",
+    "a11y",
+    "accessability",
+    "image"
+  ],
+  "dependencies": {
+    "unist-util-visit": "1.4.0"
+  },
+  "files": [
+    "gridsome"
+  ]
 }
